@@ -1,0 +1,40 @@
+opcion = 0
+print('Bienvenido al sistema de notas de los alumnos')
+print("-----Menu-----")
+print("1) Listado de notas")
+print("2) Numero de emergencia del alumno")
+opcion = int(input("Ingrese una opcion: "))
+try:
+    while opcion != 1 and opcion != 2:
+        print ("Opcion invalida")
+    match opcion:
+        case 1:
+            print("Ingreso al listado de notas ")
+            cantidad_alumnos = int(input('Ingrese cantidad de alumnos que ingresará '))
+            while (cantidad_alumnos <=0):
+                print ("Cantidad de alumnos debe ser mayor a 0")
+                cantidad_alumnos = int(input('Ingrese cantidad de alumnos que ingresará '))
+            cantidad_notas = int(input('Ingrese cantidad de notas que ingresará por cada alumno '))
+            while (cantidad_notas <= 0):
+                print('Cantidad de notas debe ser mayor a 0')
+                cantidad_notas = int(input('Ingrese cantidad de notas que ingresará por cada alumno '))
+            matrix = []
+            for contador_alumnos in range(cantidad_alumnos):
+                alumnos=[]
+                for contador_notas in range(cantidad_notas):        
+                    nota = float(input(f'Ingrese nota {contador_notas+1} de alumno {contador_alumnos+1}: \n'))
+                    while(nota < 1.0 or nota > 7.0):
+                        print('Nota debe ser entre 1.0 y 7.0')
+                        nota = float(input(f'Ingrese nota {contador_notas+1} de alumno {contador_alumnos+1}: \n'))
+                    alumnos.append(nota)
+                matrix.append(alumnos)        
+            print(matrix)
+            nueva_tuple = tuple(matrix)
+            print(f"Imprimiendo tupla {nueva_tuple}")
+
+        case 2:
+            
+except ValueError:
+    print("Ha ocurrido un error")
+#opcion 1 ingresar notas
+#opcion 2 fono de emergencia para alumnos #diccionario
