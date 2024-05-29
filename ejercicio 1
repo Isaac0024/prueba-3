@@ -33,7 +33,7 @@ try:
             print(f"Imprimiendo tupla {nueva_tuple}")
 
         case 2:
-            
+            print("Hola Mundo")
 except ValueError:
     print("Ha ocurrido un error")
 #opcion 1 ingresar notas
